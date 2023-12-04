@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const file = await fs.readFile("data", { encoding: "utf-8" });
+const file = await fs.readFile("input/day-1", { encoding: "utf-8" });
 const nums = [
   "zero",
   "one",
