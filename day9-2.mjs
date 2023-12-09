@@ -6,14 +6,14 @@ const file = await fs.readFile("input/day-9", {
 
 function processLine(input) {
   const output = [];
+  let total = 0;
   input[0].reduce((prev, current) => {
+    total += current - prev;
     output.push(current - prev);
     return current;
   });
   const result = [output, ...input];
-  if (output.every((x) => x === 0)) {
-    return result;
-  }
+  if (total === 0) return result;
   return processLine(result);
 }
 
